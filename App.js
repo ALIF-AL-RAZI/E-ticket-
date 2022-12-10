@@ -16,7 +16,7 @@ export default function App() {
     {
       app?
       <Stack.Navigator >
-        <Stack.Screen name='Home' component={Home}/>
+        <Stack.Screen name='Home' component={Home} options={{headerShown:false}}/>
         <Stack.Screen name='QrCode' component={QrCode}/>
         <Stack.Screen name='QrCodeInformation' component={QrCodeInformation}/>
       </Stack.Navigator>
@@ -38,6 +38,6 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
     alignItems: 'center',
     justifyContent: 'center',
-   ...StyleSheet.absoluteFill
+ 
   },
 });
