@@ -7,10 +7,11 @@ import QrCode from './components/QrCode';
 import QrCodeInformation from './components/QrCodeInformation';
 import SignUp from './components/SignUp';
 import SignIn from './components/SignIn';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 export default function App() {
   const Stack=createNativeStackNavigator()
 
-  const app=true
+  const app=AsyncStorage.getItem("token")
   return (
     <NavigationContainer>
     {
@@ -22,8 +23,8 @@ export default function App() {
       </Stack.Navigator>
       :
       <Stack.Navigator >
-      <Stack.Screen name='SignUp' component={SignUp}/>
-      <Stack.Screen name='SignIn' component={SignIn}/>
+      <Stack.Screen name='SignUp' options={{headerShown:false}} component={SignUp}/>
+      <Stack.Screen name='SignIn' options={{headerShown:false}} component={SignIn}/>
 
     </Stack.Navigator>
     }
